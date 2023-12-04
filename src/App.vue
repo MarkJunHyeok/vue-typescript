@@ -23,13 +23,13 @@ const changeName : (name: string) => void = (name) => {
 }
 
 changeName('jun')
-
 </script>
 
 <template>
   <body>
     <div>Count: {{ count }}</div>
     <button @click="count++">add Count</button>
+
 
     <div>FullName {{ fullName}}</div>
 
