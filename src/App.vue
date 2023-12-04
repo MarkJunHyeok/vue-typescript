@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, Ref, ref, UnwrapRef} from "vue";
+import {computed, reactive, Ref, ref, UnwrapRef} from "vue";
 
 const count: Ref<number> = ref(0);
 
@@ -9,11 +9,13 @@ interface User {
   age: number
 }
 
-const user: User = reactive({} as User)
+const user: User = reactive({
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 2
+})
 
-user.firstName = 'jun'
-user.lastName = 'park'
-user.age = 23
+const fullName = computed<string>(() => `${user.firstName}  ${user.lastName}`)
 </script>
 
 <template>
@@ -29,7 +31,7 @@ user.age = 23
     <div>Count: {{ count }}</div>
   <button @click="count++">add Count</button>
 
-  <div>FullName {{`${user.firstName} ${user.lastName}`}}</div>
+  <div>FullName {{ fullName}}</div>
   </body>
 
   <main>
