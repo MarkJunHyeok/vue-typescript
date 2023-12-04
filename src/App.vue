@@ -33,7 +33,7 @@ changeName('jun')
 
     <div>FullName {{ fullName}}</div>
 
-    <HelloWorld msg="HIHIHIHIHIHI" :user="user"/>
+    <HelloWorld msg="HIHIHIHIHIHI" :user="user" @changeName="changeName"/>
   </body>
 </template>
 
