@@ -4,6 +4,7 @@ import HelloWorld from "./component/HelloWorld.vue";
 import TemplateRefs from "@/component/TemplateRefs.vue";
 import Event from "@/component/Event.vue";
 import MouseEvent from "@/component/MouseEvent.vue";
+import Fetch from "@/component/Fetch.vue";
 
 const count: Ref<number> = ref(0);
 
@@ -39,7 +40,8 @@ changeName('jun')
     <HelloWorld msg="HIHIHIHIHIHI" :user="user" @changeName="changeName"/><br>
     <TemplateRefs/><br><br>
     <Event/><br><br>
-    <MouseEvent/>
+    <MouseEvent/><br><br>
+    <Fetch/><br><br>
   </body>
 </template>
 
