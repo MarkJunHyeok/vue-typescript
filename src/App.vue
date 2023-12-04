@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import {computed, reactive, Ref, ref, UnwrapRef} from "vue";
+import {computed, reactive, Ref, ref} from "vue";
+import HelloWorld from "./component/HelloWorld.vue";
 
 const count: Ref<number> = ref(0);
 
-interface User {
+export interface User {
   firstName: string,
   lastName: string,
   age: number
@@ -26,51 +27,15 @@ changeName('jun')
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <body>
     <div>Count: {{ count }}</div>
-  <button @click="count++">add Count</button>
+    <button @click="count++">add Count</button>
 
-  <div>FullName {{ fullName}}</div>
+    <div>FullName {{ fullName}}</div>
+
+    <HelloWorld msg="HIHIHIHIHIHI" :user="user"/>
   </body>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
